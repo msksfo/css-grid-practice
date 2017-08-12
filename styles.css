@@ -1,0 +1,131 @@
+body {
+	background-color: gray;
+	box-sizing: border-box;
+
+}
+
+.outerwrapper {
+	border: 3px solid black;
+	margin-bottom: 2rem;
+}
+
+.container1 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr; /* this sets the width */
+	grid-template-rows: 12.5rem; /* this sets the height of items 1-4 only!! the overflow will be only tall enough to accommodate their content. to give the overflow a size -----> grid-auto-rows: 100px */
+	grid-gap: 10px;
+}
+
+.container2 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-gap: 3px;
+	grid-template-columns: 50px repeat(2, 1fr 2fr); /* repeat notation (how many times to repeat the pattern, what the pattern is).   */
+}
+
+.container3 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: minmax(75px, auto); /* if no grid-template-rows is used, this will apply to all row cell height */
+}
+
+.container4 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 8px;
+	grid-template-rows: 70px 70px 70px;
+	grid-auto-flow column;
+}
+
+.item2column {
+	order: 1;
+}
+.column {
+	order: 2;
+}
+
+.item {
+	border: 1px solid purple;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+
+
+.item1 {
+	background-color: goldenrod;
+}
+
+.item2 {
+	background-color: midnightblue;
+}
+
+.item3{
+	background-color: #387c44;
+}
+
+.item4 {
+	background-color: #6f4e37;
+}
+
+.item5 {
+	background-color: firebrick;
+}
+
+.item6 {
+	background-color: #b93b8f;
+}
+
+.item7{
+	background-color: plum ;
+}
+
+.item8 {
+	background-color: #e3e4fa;
+}
+
+.item9 {
+	background-color: #ffa07a;
+}
+
+.item10 {
+	background-color: #00bfff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
