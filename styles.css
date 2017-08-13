@@ -133,7 +133,7 @@ body {
 }
 .container9 div:nth-child(2){
 	grid-column: 1; /* start at column 1. not necessary to specify endpoint here, because we are only taking up one cell, which is the default behavior */
-	grid-row 2;
+	grid-row: 2;
 }
 .container9 div:nth-child(3){
 	grid-column: 2 / 4; /* start at column 2, and end at column 4 */
@@ -142,6 +142,38 @@ body {
 .container9 div:nth-child(4){
 	grid-column: 3/ 5; /* start at column 3, and end at column 5. there is not space for this, so it gets bumped down to the next line, creating white space.*/
 }
+
+/*----------------------------------------------------------------*/
+
+.container10 {
+	display: grid;
+	border: 3px solid ivory;
+	margin-bottom: 
+	20px;
+	grid-gap: 12px;
+	grid-template-columns: 2fr [content-start] 4fr [content-end]; /* you can name the column lines; do this inside [] Helpful because these lines stay the same even if you redefine the grid for different media break points */
+	grid-template-rows: auto [content-start] auto [content-end];
+}
+header {
+	background-color: #008080;
+	grid-column: 1 / 3;
+}
+aside {
+	grid-column: 1;
+	grid-row: 2;
+	background-color: #f9ebea;
+}
+article {
+	grid-column: content-start; /* same as grid-column: 2; */
+	grid-row: content-start ; /* same as grid-row: 2; */
+	background-color: #eafaf1;
+}
+footer {
+	grid-column: 1 / 3;
+	grid-row: 3;
+	background-color: #008080;
+}
+
 
 
 
@@ -165,7 +197,7 @@ body {
 }
 
 .item3{
-	background-color: #387c44;
+	background-color: #aeb6bf;
 }
 
 .item4 {
