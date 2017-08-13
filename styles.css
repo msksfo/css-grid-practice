@@ -8,6 +8,7 @@ body {
 	border: 3px solid black;
 	margin-bottom: 2rem;
 }
+/*-----------------------------------------------------------------*/
 
 .container1 {
 	border: 3px solid ivory;
@@ -17,6 +18,7 @@ body {
 	grid-template-rows: 12.5rem; /* this sets the height of items 1-4 only!! the overflow will be only tall enough to accommodate their content. to give the overflow a size -----> grid-auto-rows: 100px */
 	grid-gap: 10px;
 }
+/*---------------------------------------------------------------------*/
 
 .container2 {
 	border: 3px solid ivory;
@@ -25,6 +27,7 @@ body {
 	grid-gap: 3px;
 	grid-template-columns: 50px repeat(2, 1fr 2fr); /* repeat notation (how many times to repeat the pattern, what the pattern is).   */
 }
+/*--------------------------------------------------------------------*/
 
 .container3 {
 	border: 3px solid ivory;
@@ -33,6 +36,7 @@ body {
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-auto-rows: minmax(75px, auto); /* if no grid-template-rows is used, this will apply to all row cell height */
 }
+/*-----------------------------------------------------------------------*/
 
 .container4 {
 	border: 3px solid ivory;
@@ -41,7 +45,7 @@ body {
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 8px;
 	grid-template-rows: 70px 70px 70px;
-	grid-auto-flow column;
+	grid-auto-flow: column; /* this will change the flow to columns rather than default rows */
 }
 
 .item2column {
@@ -50,6 +54,96 @@ body {
 .column {
 	order: 2;
 }
+/*---------------------------------------------------------------------*/
+
+.container5 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* combine with minmax for more flexibility. the cells will never be smaller than 200px, but could be larger, depending on browser width. without minmax --> repeat(auto-fill, 100px) */
+}
+/*----------------------------------------------------------------*/
+
+.container6 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* toggle between auto-fill and auto-fit to see what this does. Here, our minimum size is quite small, which leaves extra space at the end of the track. auto-fit collapses this space and applies the leftover space equally between cells. */
+}
+/*-------------------------------------------------------------------------*/
+
+.container7 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+	grid-auto-rows: minmax(80px, auto);
+	grid-auto-flow: dense; /* when there is a gap, the grid will move forward, and when it finds something that will fit the gap, it will take it out of the source order, and fill in this gap, to create a tight compact grid without gaps */
+}
+.container7 > .item2, .container7 > .item6, .container7 > .item21, .container7 > .item11 {
+	grid-column-end: span 2;
+	grid-row-end: span 2;
+}
+.container7 > .item9 {
+	grid-column-end: span 4;
+	grid-row-end: span 3;
+}
+.container7 > .item13 {
+	grid-column-end: span 3;
+}
+.container7 > .item1 {
+	grid-row-end: span 4;
+}
+.container7 > .item19, .container7 > .item24 {
+	grid-row-end: span 2;
+}
+/*---------------------------------------------------------------------*/
+
+.container8 {
+	border: 3px solid ivory;
+	margin-bottom: 20px;
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+	grid-auto-rows: minmax(100px, auto);
+}
+.container8 > .item2 {
+	grid-row: 2;
+	grid-column: 1 / -1; /* take up the whole line. this will be placed first, before the other items */
+}
+.container8 > .item6 {
+	grid-row: 3;
+	grid-column: span 3;
+}
+/*--------------------------------------------------------------*/
+
+.container9 {
+	border: 3px solid ivory; 
+	margin-bottom: 20px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 70px);
+}
+.container9 div:nth-child(1){
+	grid-column: 1 / -1; /* this is shorthand notations for grid-column-start: 1; grid-column-end: -1;  */
+}
+.container9 div:nth-child(2){
+	grid-column: 1; /* start at column 1. not necessary to specify endpoint here, because we are only taking up one cell, which is the default behavior */
+	grid-row 2;
+}
+.container9 div:nth-child(3){
+	grid-column: 2 / 4; /* start at column 2, and end at column 4 */
+	grid-row: 2;
+}
+.container9 div:nth-child(4){
+	grid-column: 3/ 5; /* start at column 3, and end at column 5. there is not space for this, so it gets bumped down to the next line, creating white space.*/
+}
+
+
 
 .item {
 	border: 1px solid purple;
@@ -100,6 +194,48 @@ body {
 
 .item10 {
 	background-color: #00bfff;
+}
+.item11 {
+	background-color: #699900;
+}
+.item12 {
+	background-color: #ff6600;
+}
+.item13 {
+	background-color: #330000;
+}
+.item14 {
+	background-color: #999966;
+}
+.item15 {
+	background-color: #990033;
+}
+.item16 {
+	background-color: #333333;
+}
+.item17{
+	background-color: #ivory;
+}
+.item18 {
+	background-color: #f0e68c;
+}
+.item19 {
+	background-color: #d8bfd8;
+}
+.item20 {
+	background-color: #ffc0cb;
+}
+.item21 {
+	background-color: #663399;
+}
+.item22 {
+	background-color: #483d8b;
+}
+.item23 {
+	background-color: #burlywood;
+}
+.item24 {
+	background-color: #ff5733;
 }
 
 
